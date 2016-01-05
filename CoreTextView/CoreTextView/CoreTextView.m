@@ -89,7 +89,11 @@
     
     NSDictionary* tipAttr = @{NSFontAttributeName:font,NSForegroundColorAttributeName:self.placeholderColor};
     
-    NSString *str = [NSString stringWithFormat:@"剩余%@字",@(self.maxInputCount - self.text.length)];
+    NSUInteger lastLength = self.maxInputCount - self.text.length;
+    
+    if(lastLength < 0 || lastLength > 10000) lastLength = 0;
+    
+    NSString *str = [NSString stringWithFormat:@"剩余%@字",@(lastLength)];
     
     CGSize tipSize =[str sizeWithFont:font];
     

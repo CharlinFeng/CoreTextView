@@ -24,7 +24,7 @@
     self.textView.layer.borderWidth = 0.5f;
     self.textView.layer.borderColor = [UIColor grayColor].CGColor;
     self.textView.placeholder = @"请输入您的评价";
-    self.textView.maxInputCount = 100;
+    self.textView.maxInputCount = 10;
     
 }
 
