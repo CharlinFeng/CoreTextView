@@ -61,6 +61,8 @@
 {
     [super drawRect:rect];
 
+    [self clearsContextBeforeDrawing];
+    
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     UIFont *font = self.placeholderFont ? self.placeholderFont : self.font;
@@ -103,6 +105,8 @@
     CGRect tipRect = CGRectMake(x, y, tipSize.width, tipSize.height);
     
     [str drawInRect:tipRect withAttributes:tipAttr];
+    
+//    CGContextRelease(context);
 }
 
 #pragma mark - Set Method
@@ -168,6 +172,8 @@
             self.text = [ self.text substringToIndex:self.maxInputCount];
         }
     }
+    
+    [self setNeedsDisplay];
 }
 
 @end
