@@ -10,7 +10,7 @@
 
 @interface CoreTextView : UITextView
 
-@property (nonatomic, copy  ) NSString  *placeholder;       // default is nil.
+@property (nonatomic, copy) IBInspectable NSString  *placeholder;       // default is nil.
 @property (nonatomic, strong) UIColor   *placeholderColor;  // default is [UIColor grayColor];
 @property (nonatomic, strong) UIFont    *placeholderFont;   // default is TextView Font
 @property (nonatomic, assign) CGPoint   placeholderPoint;   // default is (8,8)
